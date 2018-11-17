@@ -312,7 +312,7 @@ public class Waypoint : MonoBehaviour {
 
     }
 
-    private void SendROSModifyMessage()
+    private void SendROSModifyMessage() 
     {
 
         WorldScript ws = GameObject.Find("World").GetComponent<WorldScript>();

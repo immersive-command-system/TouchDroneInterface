@@ -245,7 +245,7 @@ public class PlayPauseButtonScript : MonoBehaviour {
         {
 
 
-            GameObject.Find("Master").GetComponent<ROSDroneConnection>().SendServiceCall("/takeoff", "");
+            GameObject.Find("Master").GetComponent<ROSDroneConnection>().SendServiceCall("takeoff", "");
             ps = PlayState.Pause;
 
 
@@ -254,7 +254,7 @@ public class PlayPauseButtonScript : MonoBehaviour {
         else if (ps == PlayState.Pause)
         {
 
-            GameObject.Find("Master").GetComponent<ROSDroneConnection>().SendServiceCall("/land", "");
+            GameObject.Find("Master").GetComponent<ROSDroneConnection>().SendServiceCall("land", "");
             ps = PlayState.Play;
 
         }
