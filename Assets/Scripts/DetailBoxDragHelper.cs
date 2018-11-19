@@ -36,7 +36,7 @@ public class DetailBoxDragHelper : EventTrigger
             float value = slider.value;
 
             UpdateHeight(value);
-
+    
         }
 
         isDragging = false;
