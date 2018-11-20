@@ -20,7 +20,7 @@ namespace ROSBridgeLib
 
             public DronePositionMsg(float x, float y, float z)
             {
-                _x = x;
+                _x = -x;
                 _y = y;
                 _z = z;
             }

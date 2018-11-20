@@ -253,8 +253,8 @@ public class PlayPauseButtonScript : MonoBehaviour {
 
         else if (ps == PlayState.Pause)
         {
-
-            GameObject.Find("Master").GetComponent<ROSDroneConnection>().SendServiceCall("land", "");
+            //Temporarily disable Pause
+            //GameObject.Find("Master").GetComponent<ROSDroneConnection>().SendServiceCall("land", "");
             ps = PlayState.Play;
 
         }
