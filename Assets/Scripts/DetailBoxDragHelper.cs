@@ -34,7 +34,6 @@ public class DetailBoxDragHelper : EventTrigger
         {
 
             float value = slider.value;
-
             UpdateHeight(value);
     
         }
@@ -56,9 +55,7 @@ public class DetailBoxDragHelper : EventTrigger
 
         if (currWP != null && adding)
         {
-
             world.SendMessage("SetHeight", value);
-
         }
         if (currWP != null)
         {

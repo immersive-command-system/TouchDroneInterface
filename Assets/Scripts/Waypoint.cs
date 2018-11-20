@@ -92,7 +92,6 @@ public class Waypoint : MonoBehaviour {
         if (!WaypointComplete)
         {
             currPos = this.transform.position;
-
             if (currPos != lastPos)
             {
 
@@ -100,7 +99,6 @@ public class Waypoint : MonoBehaviour {
 
                 Vector3 sub = worldPos;
                 worldPos = new Vector3(currPos.x, sub.y, currPos.z);
-                //			print ("why");
             }
 
             lastPos = currPos;
@@ -185,7 +183,8 @@ public class Waypoint : MonoBehaviour {
 	private float SetHeight(float height) 
 	{
 
-		// This is the ratio.
+        // This is the ratio.
+        Debug.Log("heldaf");
 		TempHeight = height;
 		return TempHeight;
 	}

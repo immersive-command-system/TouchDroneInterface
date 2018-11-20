@@ -18,12 +18,14 @@ public class SliderHelper : MonoBehaviour
 
         if (action == "Add")
         {
+            Debug.Log("Jang");
             float height = CalcHeight(slider.value);
             GameObject world = GameObject.Find("World");
             world.SendMessage("SetHeight", height);
         }
         if (action == "Move")
         {
+            Debug.Log("mo");
             GameObject waypoint = GameObject.Find(caller);
             float height = CalcHeight(slider.value);
             waypoint.SendMessage("SetHeight", height);

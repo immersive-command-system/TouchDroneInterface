@@ -38,9 +38,9 @@ public class WorldScript : MonoBehaviour
 
 	void Start()
 	{
-
-		// On Start, set overhead cam. Disable height cam.
-		TempHeight = 0f;
+        Screen.SetResolution(800, 600, true, 60);
+        // On Start, set overhead cam. Disable height cam.
+        TempHeight = 0f;
 		wayPoints = new GameObject[20];
 
 		currPointIndex = 0;
@@ -84,7 +84,7 @@ public class WorldScript : MonoBehaviour
 			
 			var gesture = sender as TapGesture;
 			HitData hit = gesture.GetScreenPositionHitData ();
-//			print ("Tapped Position: " + hit.Point);
+			//print ("Tapped Position: " + hit.Point);
 
 			// Switch Add_State off.
 			GameObject master = GameObject.Find("Master");
@@ -226,13 +226,13 @@ public class WorldScript : MonoBehaviour
         AddWaypointHouseKeeping(waypoint.name);
 
         // Waiting player for height.
-        //		print ("Waiting for a height.");
+        print ("Waiting for a height.");
         yield return new WaitUntil (() => TempHeight != 0);
 
 
         AddWaypointUndoHouseKeeping(waypoint.name);
 
-        //		print ("Height received.");
+        print ("Height received.");
         // Hit coordinates are unreliable...
 
         float worldX = waypoint.transform.localPosition.x;

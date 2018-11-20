@@ -25,6 +25,7 @@ public class DragHandler : EventTrigger
     {
         if (isDragging)
         {
+            Debug.Log("hello");
             SliderHelper sh = this.GetComponent<SliderHelper>();
             sh.GetHeight();
         }

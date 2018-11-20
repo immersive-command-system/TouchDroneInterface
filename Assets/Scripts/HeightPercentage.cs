@@ -16,10 +16,12 @@ public class HeightPercentage : MonoBehaviour {
 	void Update () {
         GameObject s = GameObject.Find("HeightSlider");
         textUpdate(s.GetComponent<Slider>().value);
+        
 	}
 
     public void textUpdate(float value)
     {
+        Debug.Log("he");
         percentageText.text = Mathf.RoundToInt(value * 100) + "%";
     }
 }
