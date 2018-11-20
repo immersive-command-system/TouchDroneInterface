@@ -310,6 +310,8 @@
     <Compile Include="Assets\Scripts\PlayImageScript.cs" />
     <Compile Include="Assets\Scripts\PlayPauseButtonScript.cs" />
     <Compile Include="Assets\Scripts\ROS Scripts\DronePositionMsg.cs" />
+    <Compile Include="Assets\Scripts\ROS Scripts\EnvironmentMsg.cs" />
+    <Compile Include="Assets\Scripts\ROS Scripts\EnvironmentSubscriber.cs" />
     <Compile Include="Assets\Scripts\ROS Scripts\ObstacleMsg.cs" />
     <Compile Include="Assets\Scripts\ROS Scripts\ObstacleSubscriber.cs" />
     <Compile Include="Assets\Scripts\ROS Scripts\ROSDroneConnection.cs" />

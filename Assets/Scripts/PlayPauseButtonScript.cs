@@ -77,8 +77,8 @@ public class PlayPauseButtonScript : MonoBehaviour {
 
                 // If in Play mode, we'll want Pause image to show
                 // that tapping the button again will pause program.
-                DisableImage("play");
-                EnableImage("pause");
+                //DisableImage("play");
+                //EnableImage("pause");
 
                 // We're playing.
                 isPlaying = true;

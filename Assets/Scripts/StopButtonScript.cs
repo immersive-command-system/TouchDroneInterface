@@ -70,8 +70,7 @@ public class StopButtonScript : MonoBehaviour {
     {
 
         // Do what needs to be done.
-
-        print("To be implemented.");
+        GameObject.Find("Master").GetComponent<ROSDroneConnection>().SendServiceCall("land", "");
 
         if (currColor == "standard")
         {

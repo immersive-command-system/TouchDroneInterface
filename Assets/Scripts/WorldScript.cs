@@ -33,7 +33,9 @@ public class WorldScript : MonoBehaviour
 	private float TempHeight;
 
 	public GameObject[] wayPoints;
-	public int currPointIndex;
+    public static Dictionary<char, GameObject> hoopsDict;
+
+    public int currPointIndex;
 	private int numWaypoints;
 
 	void Start()
@@ -46,6 +48,7 @@ public class WorldScript : MonoBehaviour
 		currPointIndex = 0;
 		numWaypoints = 0;
 
+        hoopsDict = new Dictionary<char, GameObject>();
         CommandText = GameObject.Find("CommandText");
 
         AddWaypointButton = GameObject.Find("AddWayPointButton");

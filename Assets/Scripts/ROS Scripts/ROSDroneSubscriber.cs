@@ -32,7 +32,6 @@ public class ROSDroneSubscriber : ROSBridgeSubscriber
         {
             DronePositionMsg pose = (DronePositionMsg)msg;
             robot.transform.localPosition = new Vector3(pose._x, pose._z, -pose._y) + new Vector3(0.0044f, -0.0388f, 0.0146f);;
-            Debug.Log(robot.transform.position);
         }
     }
 }

@@ -44,7 +44,7 @@ public class StopTextScript : MonoBehaviour
 
         // Do what needs to be done.
 
-        print("To be implemented.");
+        GameObject.Find("Master").GetComponent<ROSDroneConnection>().SendServiceCall("land", "");
 
         if (sbs.currColor == "standard")
         {
