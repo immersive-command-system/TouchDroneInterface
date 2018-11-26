@@ -18,7 +18,8 @@ public class WorldScript : MonoBehaviour
     public GameObject heightSliderPrefab;
     public GameObject Canvas;
     public GameObject sliderText;
-
+    public GameObject torus;
+    public static List<GameObject> obstacles;
 
     private GameObject CommandText;
     private GameObject AddWaypointButton;
@@ -143,7 +144,39 @@ public class WorldScript : MonoBehaviour
 		}
 	}
 
-	private void longPressHandler(object sender, EventArgs e)
+
+    /// <summary>
+    /// Converts the ROSPosition to WorldPosition
+    /// </summary>
+    /// <param name="worldPosition"></param>
+    /// <returns></returns>
+
+    public static Vector3 RosSpaceToWorldSpace(Vector3 ROSPosition)
+    {
+        return new Vector3(
+            -ROSPosition.x,
+            ROSPosition.z + 0.148f,
+            -ROSPosition.y
+        );
+    }
+
+
+    /// <summary>
+    /// Converts the ROSPosition to WorldPosition
+    /// </summary>
+    /// <param name="worldPosition"></param>
+    /// <returns></returns>
+
+    public static Vector3 RosSpaceToWorldSpace(float pose_x, float pose_y, float pose_z)
+    {
+        return new Vector3(
+            -pose_x,
+            pose_z + 0.148f,
+            -pose_y
+            );
+    }
+
+    private void longPressHandler(object sender, EventArgs e)
 	{
 
 		// Delete Functionality.

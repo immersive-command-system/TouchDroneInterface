@@ -1422,6 +1422,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 1137765387231980, guid: f49e25518ab4b8f4797b7d993359a8a7, type: 2}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 33139630525497594, guid: f49e25518ab4b8f4797b7d993359a8a7, type: 2}
     - {fileID: 23023860162146560, guid: f49e25518ab4b8f4797b7d993359a8a7, type: 2}
@@ -3246,6 +3250,7 @@ MonoBehaviour:
     type: 2}
   Canvas: {fileID: 1734170308}
   sliderText: {fileID: 1566833240345660, guid: ec555d255fdf5514599e05f983f057e1, type: 2}
+  torus: {fileID: 1895450155305386, guid: 693cfcabdb57c7245942981ce099b4fb, type: 2}
   Scale: 0.5
   wayPoints: []
   currPointIndex: 0
