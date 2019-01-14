@@ -45,8 +45,6 @@ public class Waypoint : MonoBehaviour {
         // Convoluted way of getting a reference to a prefab.
 
         GameObject world = GameObject.Find("World");
-        heightSliderPrefab = world.GetComponent<WorldScript>().heightSliderPrefab;
-        sliderText = world.GetComponent<WorldScript>().sliderText;
 
         TempHeight = 0f;	
 		this.gameObject.tag="Waypoint";

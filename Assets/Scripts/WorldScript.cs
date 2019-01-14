@@ -13,11 +13,9 @@ using ROSBridgeLib.interface_msgs;
 
 public class WorldScript : MonoBehaviour
 {
-	public Transform Container;
+    public Transform Container;
 	public Transform WaypointPrefab;
-    public GameObject heightSliderPrefab;
     public GameObject Canvas;
-    public GameObject sliderText;
     public GameObject torus;
     public static List<GameObject> obstacles;
 
@@ -71,16 +69,17 @@ public class WorldScript : MonoBehaviour
 		GetComponent<TapGesture>().Tapped += tappedHandler;
 
 		GetComponent<LongPressGesture> ().LongPressed += longPressHandler;
-	}
+    }
 
 	private void OnDisable()
 	{
 		GetComponent<TapGesture>().Tapped -= tappedHandler;
 
 		GetComponent<LongPressGesture> ().LongPressed -= longPressHandler;
-	}
+    }
 
-	public void tappedHandler(object sender, EventArgs e)
+
+    public void tappedHandler(object sender, EventArgs e)
 	{
 
 		// Can only add if in Add_State.
@@ -252,7 +251,7 @@ public class WorldScript : MonoBehaviour
 		waypoint.gameObject.AddComponent<Waypoint> ();
 		waypoint.gameObject.AddComponent<Transformer> ();
 
-		waypoint.localScale = Vector3.one * Scale * waypoint.localScale.x;
+        waypoint.localScale = Vector3.one * Scale;// * waypoint.localScale.x;
 		waypoint.position = new Vector3 (hit.Point.x, 2f, hit.Point.z);
 
 		waypoint.gameObject.GetComponent<Waypoint>().setFlatPos(waypoint.position);
