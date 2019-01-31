@@ -220,7 +220,7 @@ public class InfoText : MonoBehaviour {
     {
         if (value != Mathf.Infinity)
         {
-            YInfo.text = "Y: " + value;
+            YInfo.text = "Y: " + value + " (ft)";
         }
         else
         {

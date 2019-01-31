@@ -274,7 +274,8 @@ public class WorldScript : MonoBehaviour
 
         float worldZ = waypoint.transform.localPosition.z;
 
-        waypoint.gameObject.GetComponent<Waypoint> ().setWorldPos(new Vector3 (worldX, TempHeight, worldZ));
+        //Paxtan: Storing the waypoint with the feet units in the Y value because it displays the waypoint value after letting go of the slider
+        waypoint.gameObject.GetComponent<Waypoint> ().setWorldPos(new Vector3 (worldX, TempHeight*10f, worldZ));
 		waypoint.gameObject.GetComponent<Waypoint>().SetID (id);
         waypoint.GetComponent<Waypoint>().CreateHoverText();
 
@@ -282,6 +283,7 @@ public class WorldScript : MonoBehaviour
         string prevID = GetPrevID(waypoint.name, "add");
 
         // ROS COMMUNICATION
+        //TODO: Figure out how ROS wants Y input -> Currently the ratio between 0-10 feet
         UserpointInstruction msg = new UserpointInstruction(waypoint.name, prevID, worldX, TempHeight, worldZ, "ADD");
         GameObject.Find("Master").GetComponent<ROSDroneConnection>().PublishWaypointUpdateMessage(msg);
 
@@ -438,7 +440,10 @@ public class WorldScript : MonoBehaviour
 	{
 
 		// This is the ratio.
-		TempHeight = height;
+        //Paxtan: Making new ratio with 10 as Maximum (still need to make sure ROS Max is also 10 feet) 
+
+		TempHeight = height/10f;
+        Debug.Log("Paxtan: Height Ratio is: " + TempHeight);
 		return TempHeight;
 	}
 

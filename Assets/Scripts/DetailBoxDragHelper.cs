@@ -21,6 +21,7 @@ public class DetailBoxDragHelper : EventTrigger
         slider = GameObject.Find("ZSlider").GetComponent<Slider>();
         adding = false;
         world = GameObject.Find("World");
+        slider.maxValue = 10f;
 	}
 	
 	// Update is called once per frame

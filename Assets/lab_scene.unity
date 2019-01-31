@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -412,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -679,6 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -766,6 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -853,6 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -909,6 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ea9930ecb674732bee27116520fad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -1027,7 +1033,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Y: '
+  m_Text: 'Y: (ft)
+
+'
 --- !u!222 &568034344
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1078,6 +1086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -1894,6 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -1988,6 +1998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -2164,6 +2175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -2733,6 +2745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -3315,10 +3328,7 @@ MonoBehaviour:
   Container: {fileID: 615367324}
   WaypointPrefab: {fileID: 4791136810633842, guid: eccb673a3ffb74bfea4010dc3f817e9b,
     type: 2}
-  heightSliderPrefab: {fileID: 1959717826594762, guid: 069b7f437a067974892d0ddffc3ebd5a,
-    type: 2}
   Canvas: {fileID: 1734170308}
-  sliderText: {fileID: 1566833240345660, guid: ec555d255fdf5514599e05f983f057e1, type: 2}
   torus: {fileID: 1895450155305386, guid: 693cfcabdb57c7245942981ce099b4fb, type: 2}
   Scale: 0.3
   wayPoints: []
@@ -3334,6 +3344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c8d97aff62a473e888feae3bec54cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -3370,6 +3381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
@@ -3481,6 +3493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ea9930ecb674732bee27116520fad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
