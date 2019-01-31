@@ -294,6 +294,7 @@
     <Compile Include="Assets\ROSBridgeLib\std_msgs\UInt8MultiArrayMsg.cs" />
     <Compile Include="Assets\Scripts\AddWaypointButtonScript.cs" />
     <Compile Include="Assets\Scripts\ButtonColorHandler.cs" />
+    <Compile Include="Assets\Scripts\ButtonHelper.cs" />
     <Compile Include="Assets\Scripts\CommandTextScript.cs" />
     <Compile Include="Assets\Scripts\CompletedLR.cs" />
     <Compile Include="Assets\Scripts\DeleteWaypointButtonScript.cs" />

@@ -220,7 +220,14 @@ public class InfoText : MonoBehaviour {
     {
         if (value != Mathf.Infinity)
         {
-            YInfo.text = "Y: " + value + " (ft)";
+            //YInfo.text = "Y: " + value + " (ft)";
+            if (ButtonHelper.Units == "SI")
+            {
+                YInfo.text = "Y: " + value + " (ft)";
+            } else
+            {
+                YInfo.text = "Y: " + value + " (m)";
+            }
         }
         else
         {

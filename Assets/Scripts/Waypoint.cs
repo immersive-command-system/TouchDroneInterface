@@ -312,6 +312,7 @@ public class Waypoint : MonoBehaviour {
     private void SendROSModifyMessage() 
     {
 
+        //TODO: Determine Why Tom has height being set to worldPos on edit (Kind of breaks the ability to edit) 
         WorldScript ws = GameObject.Find("World").GetComponent<WorldScript>();
         
         string prevID = ws.GetPrevID(this.name, "modify");

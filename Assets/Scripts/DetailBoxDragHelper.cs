@@ -11,6 +11,7 @@ public class DetailBoxDragHelper : EventTrigger
     public bool isDragging;
     private Slider slider;
     public bool adding;
+    public Button UnitButton;
 
     private GameObject world;
 
@@ -22,6 +23,7 @@ public class DetailBoxDragHelper : EventTrigger
         adding = false;
         world = GameObject.Find("World");
         slider.maxValue = 10f;
+        UnitButton = GameObject.Find("UnitButton").GetComponent<Button>();
 	}
 	
 	// Update is called once per frame
@@ -45,6 +47,14 @@ public class DetailBoxDragHelper : EventTrigger
 
     public override void OnBeginDrag(PointerEventData data)
     {
+        if (ButtonHelper.Units == "Metric")
+        {
+            slider.maxValue = 3.05f;
+        } else
+        {
+            slider.maxValue = 10f;
+        }
+
         isDragging = true;
     }
     
@@ -56,10 +66,12 @@ public class DetailBoxDragHelper : EventTrigger
 
         if (currWP != null && adding)
         {
+            Debug.Log("Using Correct Edit Function");
             world.SendMessage("SetHeight", value);
         }
         if (currWP != null)
         {
+            Debug.Log("Using Incorrect Edit Function");
 
             GameObject currObject = GameObject.Find(currWP);
 

@@ -275,7 +275,17 @@ public class WorldScript : MonoBehaviour
         float worldZ = waypoint.transform.localPosition.z;
 
         //Paxtan: Storing the waypoint with the feet units in the Y value because it displays the waypoint value after letting go of the slider
-        waypoint.gameObject.GetComponent<Waypoint> ().setWorldPos(new Vector3 (worldX, TempHeight*10f, worldZ));
+        float correctHeight;
+        if (ButtonHelper.Units == "Metric")
+        {
+            correctHeight = TempHeight * 3.05f;
+        } else
+        {
+            correctHeight = TempHeight * 10f;
+        }
+
+        Debug.Log(correctHeight);
+        waypoint.gameObject.GetComponent<Waypoint> ().setWorldPos(new Vector3 (worldX, correctHeight, worldZ));
 		waypoint.gameObject.GetComponent<Waypoint>().SetID (id);
         waypoint.GetComponent<Waypoint>().CreateHoverText();
 
@@ -442,7 +452,15 @@ public class WorldScript : MonoBehaviour
 		// This is the ratio.
         //Paxtan: Making new ratio with 10 as Maximum (still need to make sure ROS Max is also 10 feet) 
 
-		TempHeight = height/10f;
+		//TempHeight = height/10f;
+
+        if (ButtonHelper.Units == "Metric")
+        {
+            TempHeight = height / 3.05f;
+        } else
+        {
+            TempHeight = height / 10f;
+        }
         Debug.Log("Paxtan: Height Ratio is: " + TempHeight);
 		return TempHeight;
 	}
