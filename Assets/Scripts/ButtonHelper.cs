@@ -37,14 +37,15 @@ public class ButtonHelper : MonoBehaviour
         if (string.Equals(Units, "SI")){
             Units = "Metric";
             buttonText.text = "Switch to SI";
-            YText.text = "Y: (m)";
-            
+            YText.text = "Y: (m)";            
         } else
         {
             Units = "SI";
             buttonText.text = "Switch to Metric";
             YText.text = "Y: (ft)";
         }
+        GameObject world = GameObject.FindGameObjectWithTag("World");
+        world.GetComponent<WorldScript>().switchHovertextUnit(Units);
         Debug.Log("Current Units are" + Units);
     }
 }
