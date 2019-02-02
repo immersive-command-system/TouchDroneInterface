@@ -354,6 +354,11 @@ public class Waypoint : MonoBehaviour {
 
     }
 
+    public void switchUnit(string switchTo)
+    {
+        MyHoverText.switchUnit(switchTo);
+    }
+
 
 
 

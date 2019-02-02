@@ -575,6 +575,17 @@ public class WorldScript : MonoBehaviour
 
     }
 
+    public void switchHovertextUnit(string switchTo)
+    {
+        for (int i = 0; i < currPointIndex; i++)
+        {
+            GameObject w = wayPoints[i];
+            Waypoint wp = w.GetComponent<Waypoint>();
+            Debug.Log(w);
+            wp.switchUnit(switchTo);
+        }
+    }
+
 
 
     /** =========================================================================================== NEGLECT =========================================================================================

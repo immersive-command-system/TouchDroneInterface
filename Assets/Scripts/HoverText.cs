@@ -8,7 +8,6 @@ public class HoverText : MonoBehaviour {
     private TextMesh tm;
     public Waypoint AttachedWaypoint;
     private GameObject c;
-
 	// Use this for initialization
 	void Start () {
 
@@ -30,8 +29,29 @@ public class HoverText : MonoBehaviour {
 
         Vector3 worldPos = AttachedWaypoint.worldPos;
         float height = RoundToHundredth(worldPos.y);
-        tm.text = "" + this.AttachedWaypoint.gameObject.name + " | " + height;
+        string unit = "ft";
+        if (ButtonHelper.Units == "Metric")
+        {
+            unit = "m";
+        }
+        tm.text = "" + this.AttachedWaypoint.gameObject.name + " | " + height + " | " + unit;
 
+    }
+
+    public void switchUnit(string convertTo)
+    {
+        Debug.Log("Converting Units.");
+
+        if (convertTo == "Metric")
+        {
+            AttachedWaypoint.worldPos.y = AttachedWaypoint.worldPos.y / 3.05f;
+        } else
+        {
+            AttachedWaypoint.worldPos.y = AttachedWaypoint.worldPos.y * 3.05f;
+        }
+
+        SetText();
+    
     }
 
     private void SetPosition()
