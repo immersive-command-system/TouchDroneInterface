@@ -274,6 +274,7 @@ public class WorldScript : MonoBehaviour
 
         float worldZ = waypoint.transform.localPosition.z;
 
+
         //Paxtan: Storing the waypoint with the feet units in the Y value because it displays the waypoint value after letting go of the slider
         float correctHeight;
         if (ButtonHelper.Units == "Metric")
@@ -284,7 +285,7 @@ public class WorldScript : MonoBehaviour
             correctHeight = TempHeight * 10f;
         }
 
-        Debug.Log(correctHeight);
+        Debug.Log(TempHeight);
         waypoint.gameObject.GetComponent<Waypoint> ().setWorldPos(new Vector3 (worldX, correctHeight, worldZ));
 		waypoint.gameObject.GetComponent<Waypoint>().SetID (id);
         waypoint.GetComponent<Waypoint>().CreateHoverText();
