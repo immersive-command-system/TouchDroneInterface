@@ -290,12 +290,12 @@ public class WorldScript : MonoBehaviour
 		waypoint.gameObject.GetComponent<Waypoint>().SetID (id);
         waypoint.GetComponent<Waypoint>().CreateHoverText();
 
-
         string prevID = GetPrevID(waypoint.name, "add");
 
         // ROS COMMUNICATION
-        //TODO: Figure out how ROS wants Y input -> Currently the ratio between 0-10 feet
-        UserpointInstruction msg = new UserpointInstruction(waypoint.name, prevID, worldX, TempHeight, worldZ, "ADD");
+        //ROS is most likely in meters.
+        float ROSHeight = TempHeight * 3.05f;
+        UserpointInstruction msg = new UserpointInstruction(waypoint.name, prevID, worldX, ROSHeight, worldZ, "ADD");
         GameObject.Find("Master").GetComponent<ROSDroneConnection>().PublishWaypointUpdateMessage(msg);
 
         // Could be buggy to only add the GameObject.
