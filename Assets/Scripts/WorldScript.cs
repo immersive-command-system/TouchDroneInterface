@@ -293,8 +293,7 @@ public class WorldScript : MonoBehaviour
         string prevID = GetPrevID(waypoint.name, "add");
 
         // ROS COMMUNICATION
-        //ROS is most likely in meters.
-        float ROSHeight = TempHeight * 3.05f;
+        float ROSHeight = TempHeight;
         UserpointInstruction msg = new UserpointInstruction(waypoint.name, prevID, worldX, ROSHeight, worldZ, "ADD");
         GameObject.Find("Master").GetComponent<ROSDroneConnection>().PublishWaypointUpdateMessage(msg);
 
