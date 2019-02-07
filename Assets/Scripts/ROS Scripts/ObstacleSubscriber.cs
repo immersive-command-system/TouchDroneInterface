@@ -35,7 +35,7 @@ public class ObstacleSubscriber : ROSBridgeSubscriber
         Vector3 tablePos = GameObject.FindWithTag("Table").transform.position;
 
         ObstacleMsg pose = (ObstacleMsg)msg;
-
+        Debug.Log("obstacle callback");
         if (!ids.Contains(pose.id) && pose.id != 0)
 
         {
