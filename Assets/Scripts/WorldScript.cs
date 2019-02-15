@@ -27,6 +27,9 @@ public class WorldScript : MonoBehaviour
     private GameObject ZSlider;
     private GameObject InfoText;
 
+    public static float runTime;
+    public static float planningTime;
+
 	public float Scale = .5f;
 
 	private float TempHeight;
@@ -39,6 +42,8 @@ public class WorldScript : MonoBehaviour
 
 	void Start()
 	{
+        runTime = 0;
+        planningTime = 0;
         Screen.SetResolution(800, 600, true, 60);
         // On Start, set overhead cam. Disable height cam.
         TempHeight = 0f;
@@ -64,7 +69,12 @@ public class WorldScript : MonoBehaviour
 
     }
 
-	private void OnEnable()
+    private void Update()
+    {
+        planningTime += Time.deltaTime;
+    }
+
+    private void OnEnable()
 	{
 		GetComponent<TapGesture>().Tapped += tappedHandler;
 

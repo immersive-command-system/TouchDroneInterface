@@ -68,7 +68,7 @@ public class StopButtonScript : MonoBehaviour {
      **/
     private void tappedHandler(object sender, EventArgs e)
     {
-
+        Debug.Log("Flight time is:" + WorldScript.runTime);
         // Do what needs to be done.
         GameObject.Find("Master").GetComponent<ROSDroneConnection>().SendServiceCall("land", "");
 

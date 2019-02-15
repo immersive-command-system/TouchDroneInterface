@@ -82,6 +82,7 @@ public class PlayPauseButtonScript : MonoBehaviour {
 
                 // We're playing.
                 isPlaying = true;
+                WorldScript.runTime += Time.deltaTime;
             }
             else
             {
@@ -244,7 +245,7 @@ public class PlayPauseButtonScript : MonoBehaviour {
         if (ps == PlayState.Play)
         {
 
-
+            Debug.Log("Planning time is:" + WorldScript.planningTime);
             GameObject.Find("Master").GetComponent<ROSDroneConnection>().SendServiceCall("takeoff", "");
             ps = PlayState.Pause;
 
