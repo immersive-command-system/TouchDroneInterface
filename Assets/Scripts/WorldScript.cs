@@ -27,6 +27,9 @@ public class WorldScript : MonoBehaviour
     private GameObject ZSlider;
     private GameObject InfoText;
 
+    public static float runTime;
+    public static float planningTime;
+
 	public float Scale = .5f;
 
 	private float TempHeight;
@@ -39,6 +42,8 @@ public class WorldScript : MonoBehaviour
 
 	void Start()
 	{
+        runTime = 0;
+        planningTime = 0;
         Screen.SetResolution(800, 600, true, 60);
         // On Start, set overhead cam. Disable height cam.
         TempHeight = 0f;
@@ -64,7 +69,12 @@ public class WorldScript : MonoBehaviour
 
     }
 
-	private void OnEnable()
+    private void Update()
+    {
+        planningTime += Time.deltaTime;
+    }
+
+    private void OnEnable()
 	{
 		GetComponent<TapGesture>().Tapped += tappedHandler;
 
@@ -290,12 +300,11 @@ public class WorldScript : MonoBehaviour
 		waypoint.gameObject.GetComponent<Waypoint>().SetID (id);
         waypoint.GetComponent<Waypoint>().CreateHoverText();
 
-
         string prevID = GetPrevID(waypoint.name, "add");
 
         // ROS COMMUNICATION
-        //TODO: Figure out how ROS wants Y input -> Currently the ratio between 0-10 feet
-        UserpointInstruction msg = new UserpointInstruction(waypoint.name, prevID, worldX, TempHeight, worldZ, "ADD");
+        float ROSHeight = TempHeight*3.05f - 0.148f;
+        UserpointInstruction msg = new UserpointInstruction(waypoint.name, prevID, worldX, ROSHeight, worldZ, "ADD");
         GameObject.Find("Master").GetComponent<ROSDroneConnection>().PublishWaypointUpdateMessage(msg);
 
         // Could be buggy to only add the GameObject.
